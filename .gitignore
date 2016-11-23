@@ -7,3 +7,6 @@ csa_c
 *.class
 target/
 Cargo.lock
+*.gz
+*.txt
+bench_data_48h
