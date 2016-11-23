@@ -71,8 +71,8 @@ class CSA
       route.reverse.each do |c|
         puts "#{c.departure_station} #{c.arrival_station} #{c.departure_timestamp} #{c.arrival_timestamp}"
       end
+      puts ""
     end
-    puts ""
     STDOUT.flush
   end
 

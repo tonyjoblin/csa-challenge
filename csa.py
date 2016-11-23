@@ -72,10 +72,11 @@ class CSA:
                     c.arrival_timestamp
                 ))
 
-        print("")
+            print("")
+
         try:
             sys.stdout.flush()
-        except BrokenPipeError:
+        except Exception:
             pass
 
     def compute(self, departure_station, arrival_station, departure_time):
@@ -98,7 +99,10 @@ def main():
             break
 
         tokens = line.rstrip().split(" ")
-        csa.compute(int(tokens[0]), int(tokens[1]), int(tokens[2]))
+        try:
+            csa.compute(int(tokens[0]), int(tokens[1]), int(tokens[2]))
+        except Exception:
+            sys.stderr.write("bad line " + line + "\n")
 
     sys.stdin.close()
 
